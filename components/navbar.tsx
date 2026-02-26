@@ -1,20 +1,30 @@
 import Link from "next/link";
-import { REDIRECT_URL } from "@/lib/config";
+
+const navLinks = [
+  { label: "Capabilities", href: "#capabilities" },
+  { label: "Categories", href: "#product-categories-title" },
+  { label: "Consultation", href: "#consultation" },
+];
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 md:px-16">
-      <span className="font-serif text-xl font-medium tracking-[0.12em] text-foreground uppercase">
-        Elina
-      </span>
-      <Link
-        href={REDIRECT_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-xs tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-200 font-sans"
-      >
-        Visit Site
-      </Link>
+    <header className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5 md:px-10">
+        <span className="text-lg font-semibold uppercase tracking-[0.14em] text-foreground">
+          Elina
+        </span>
+        <nav aria-label="Main navigation" className="flex items-center gap-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }

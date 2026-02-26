@@ -1,40 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["300", "400", "500", "600"],
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-cormorant",
-  weight: ["300", "400", "500", "600"],
-});
-
 export const metadata: Metadata = {
-  title: "Elina — Hygiene, engineered.",
+  title: "Elina | Hygiene, engineered.",
   description:
-    "Elina is a premium Indian engineering brand specialising in precision-crafted stainless steel commercial kitchen systems designed for durability, compliance, and operational efficiency.",
+    "Elina designs and fabricates precision SS304 stainless steel commercial kitchen systems with hygienic detailing, structural integrity, and compliance-focused engineering.",
   keywords: [
-    "commercial kitchen equipment",
-    "stainless steel fabrication",
-    "SS304 kitchen systems",
+    "Elina",
+    "SS304 fabrication",
+    "commercial kitchen engineering",
     "hygienic kitchen design",
-    "Elina Engineering",
+    "stainless steel kitchen equipment India",
   ],
   openGraph: {
-    title: "Elina — Hygiene, engineered.",
+    title: "Elina | Hygiene, engineered.",
     description:
-      "Premium precision-crafted stainless steel commercial kitchen systems.",
+      "Premium engineering-led commercial kitchen systems built with SS304 precision.",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f7f6f4",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 };
@@ -46,9 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${cormorant.variable} font-sans`}>
-        {children}
-      </body>
+      <body className="font-sans">{children}</body>
     </html>
   );
 }
