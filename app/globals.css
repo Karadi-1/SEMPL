@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7f6f4;
-  --foreground: #1a1a1a;
-  --muted: #f0eeeb;
-  --muted-foreground: #6b6b6b;
-  --border: #d8d5d0;
-  --accent: #1a1a1a;
-  --accent-foreground: #f7f6f4;
-  --steel: #8a9199;
+  --background: #ffffff;
+  --foreground: #111318;
+  --muted: #f3f5f7;
+  --muted-foreground: #5d6470;
+  --border: #d8dde3;
+  --accent: #111318;
+  --accent-foreground: #ffffff;
+  --steel: #6f7886;
 }
 
 * {
@@ -28,7 +28,7 @@ body {
 }
 
 body {
-  font-family: var(--font-inter), sans-serif;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
