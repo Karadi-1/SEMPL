@@ -1,106 +1,68 @@
-import Image from "next/image";
 import Link from "next/link";
-import { REDIRECT_URL } from "@/lib/config";
+
+const heroHighlights = [
+  "SS304 construction",
+  "Hygienic detailing",
+  "Precision fabrication",
+];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero-kitchen.jpg"
-          alt="Precision-engineered commercial kitchen systems"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-background/80" />
-      </div>
+    <section className="border-b border-border bg-white">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 pb-16 pt-32 md:px-10 md:pt-40 lg:grid-cols-[1.2fr_1fr] lg:items-end lg:pb-24">
+        <div className="space-y-8">
+          <p className="text-xs font-medium uppercase tracking-[0.24em] text-steel">
+            Elina Engineering
+          </p>
+          <h1 className="max-w-2xl text-5xl font-semibold leading-tight tracking-tight text-foreground md:text-7xl">
+            Hygiene, engineered.
+          </h1>
+          <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            Built for demanding food-service environments with engineered SS304
+            systems, hygienic detailing standards, and precision-led fabrication.
+          </p>
 
-      {/* Subtle grid lines */}
-      <div
-        className="absolute inset-0 z-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
-      />
+          <div className="flex flex-wrap gap-3">
+            {heroHighlights.map((highlight) => (
+              <span
+                key={highlight}
+                className="border border-border bg-muted px-3 py-1 text-xs font-medium uppercase tracking-[0.14em] text-steel"
+              >
+                {highlight}
+              </span>
+            ))}
+          </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center gap-8">
-        {/* Badge */}
-        <p className="text-[10px] tracking-[0.3em] uppercase text-steel font-sans font-medium border border-border px-4 py-2">
-          Coming Soon
-        </p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link
+              href="#capabilities"
+              className="inline-flex items-center justify-center border border-foreground bg-foreground px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:bg-steel"
+            >
+              Explore Solutions
+            </Link>
+            <Link
+              href="#consultation"
+              className="inline-flex items-center justify-center border border-border bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-foreground transition-colors hover:bg-muted"
+            >
+              Request a Consultation
+            </Link>
+          </div>
+        </div>
 
-        {/* Headline */}
-        <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-light text-foreground leading-[0.95] text-balance">
-          Hygiene,
-          <br />
-          <span className="italic">engineered.</span>
-        </h1>
-
-        {/* Sub text */}
-        <p className="font-sans text-sm md:text-base text-muted-foreground max-w-md leading-relaxed font-light tracking-wide">
-          Precision-crafted stainless steel commercial kitchen systems. SS304
-          construction. Engineered for compliance, durability, and operational
-          excellence.
-        </p>
-
-        {/* Divider */}
-        <div className="w-10 h-px bg-border" />
-
-        {/* CTA */}
-        <Link
-          href={REDIRECT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-foreground text-accent-foreground px-8 py-4 text-xs tracking-[0.2em] uppercase font-sans font-medium hover:bg-steel transition-colors duration-300"
-        >
-          Visit Site
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M1 7H13M7 1L13 7L7 13"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </Link>
-      </div>
-
-      {/* Bottom descriptor strip */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-border">
-        <div className="grid grid-cols-3 divide-x divide-border">
+        <aside className="grid gap-6 border border-border bg-muted p-6 md:grid-cols-3 lg:grid-cols-1">
           {[
             { label: "Material", value: "SS304 Stainless Steel" },
-            { label: "Standard", value: "Hygienic Engineering" },
-            { label: "Origin", value: "Precision Fabricated" },
+            { label: "Build", value: "Hygienic Detailing" },
+            { label: "Delivery", value: "Engineered Precision" },
           ].map((item) => (
-            <div
-              key={item.label}
-              className="flex flex-col items-center justify-center py-4 px-4 gap-1"
-            >
-              <span className="text-[9px] tracking-[0.2em] uppercase text-steel font-sans">
+            <div key={item.label} className="space-y-2">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-steel">
                 {item.label}
-              </span>
-              <span className="text-[11px] tracking-wide text-foreground font-sans font-medium hidden sm:block">
-                {item.value}
-              </span>
+              </p>
+              <p className="text-sm font-medium text-foreground">{item.value}</p>
             </div>
           ))}
-        </div>
+        </aside>
       </div>
     </section>
   );
