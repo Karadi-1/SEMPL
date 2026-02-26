@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     "hygienic kitchen design",
     "stainless steel kitchen equipment India",
   ],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "Elina | Hygiene, engineered.",
     description:
